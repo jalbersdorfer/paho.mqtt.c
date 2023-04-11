@@ -239,7 +239,8 @@ int main(int argc, char** argv)
 
 		if (opts.stdin_lines)
 		{
-			buffer = malloc(opts.maxdatalen);
+      if (buffer == NULL)
+  	    buffer = malloc(opts.maxdatalen);
 
 			delim_len = (int)strlen(opts.delimiter);
 			do
